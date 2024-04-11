@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class config : MonoBehaviour
 {
-    public int targetFrameRate = 60;
+    public int target_frame_rate = 60;
 
     void Awake()
     {
         QualitySettings.vSyncCount = 0;
-        Application.targetFrameRate = targetFrameRate;
+        Application.targetFrameRate = target_frame_rate;
     }
 }

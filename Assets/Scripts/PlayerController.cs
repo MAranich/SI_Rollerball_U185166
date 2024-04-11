@@ -7,9 +7,11 @@ public class PlayerController : MonoBehaviour
     public Rigidbody rb; 
     public bool is_on_floor = true;
     public float max_speed = 6; // m/s
-    private Vector3 input_dir = Vector3.zero;
+    [SerializeField] private Vector3 input_dir = Vector3.zero;
+
     private float acceleration = 0.15f; 
-    private float acceleration_stop = 0.3f; 
+    private float acceleration_stop = 0.4f; 
+    private int acceleration_aplications_per_sec = 40;
     private float friction;
 
     
@@ -27,7 +29,7 @@ public class PlayerController : MonoBehaviour
         friction = 1 / (1 / max_speed + 1);
 
         print(string.Format("Max speed: {0}\tActual Max Speed: {1}", max_speed, friction / (1 - friction)));
-
+        //if the 2 numbers coincide, everything is fine
     }
 
     void Update()
@@ -62,13 +64,11 @@ public class PlayerController : MonoBehaviour
             rb.velocity = rb.velocity * friction;
         }
 
-        if (!has_pressed_ws)
-        {
-            input_dir.x *= acceleration_stop;
+        if (!has_pressed_ws) {
+            input_dir.x *= Mathf.Pow(acceleration_stop, acceleration_aplications_per_sec * Time.deltaTime); 
         }
-        if(!has_pressed_ad)
-        {
-            input_dir.z *= acceleration_stop;
+        if(!has_pressed_ad) {
+            input_dir.z *= Mathf.Pow(acceleration_stop, acceleration_aplications_per_sec * Time.deltaTime); ;
         }
 
     }
