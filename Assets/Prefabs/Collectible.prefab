@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 3058125834595389738}
   - component: {fileID: 6268370764252536052}
   - component: {fileID: 7772745543997758262}
-  - component: {fileID: 2035986474888842698}
   - component: {fileID: 607729344061384518}
+  - component: {fileID: 2824548271299768469}
   m_Layer: 0
   m_Name: Collectible
   m_TagString: Untagged
@@ -100,19 +100,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &2035986474888842698
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4080553554878651008}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &607729344061384518
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,4 +114,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rotation_speed_rads_s: 1
   levitating_speed: 1.5
-  displ: {x: 0, y: 0, z: 0}
+--- !u!135 &2824548271299768469
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4080553554878651008}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Center: {x: 0, y: 0, z: 0}
